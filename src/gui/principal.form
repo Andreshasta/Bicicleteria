@@ -19,7 +19,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="cerrarSesionMenuItem1">
               <Properties>
                 <Property name="mnemonic" type="int" value="99"/>
-                <Property name="text" type="java.lang.String" value="Cerrar Sesionr"/>
+                <Property name="text" type="java.lang.String" value="Cerrar Sesion"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="salirMenuItem">

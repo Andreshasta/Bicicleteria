@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fabricabicicletas;
+package constructorbicicletas;
+
+import java.io.Serializable;
 
 /**
  *
- * @author Edwin
+ * @author Andres Mauricio Hastamorir 20142020001
  */
-public interface FabricaTipoBicicleta {
+public interface Bicicleta extends Serializable{
     
 }

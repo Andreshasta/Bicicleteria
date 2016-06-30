@@ -5,6 +5,9 @@
  */
 package gui;
 
+import javax.swing.JMenuItem;
+
+
 /**
  *
  * @author Edwin
@@ -81,7 +84,7 @@ public class principal extends javax.swing.JFrame {
         archivoMenu.add(ingresarMenuItem);
 
         cerrarSesionMenuItem1.setMnemonic('c');
-        cerrarSesionMenuItem1.setText("Cerrar Sesionr");
+        cerrarSesionMenuItem1.setText("Cerrar Sesion");
         archivoMenu.add(cerrarSesionMenuItem1);
 
         salirMenuItem.setMnemonic('s');

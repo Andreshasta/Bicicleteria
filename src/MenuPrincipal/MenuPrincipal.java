@@ -26,6 +26,7 @@ public class MenuPrincipal implements Menu{
         listaMenus.add(new MenuComprar());
         listaMenus.add(new MenuAlquilar());
         listaMenus.add(new MenuMantenimiento());
+        listaMenus.add(new MenuAyuda());
     }
 
     @Override
@@ -70,10 +71,10 @@ public class MenuPrincipal implements Menu{
                 listaMenus.get(4).desplegar();
                 break;
             case 5:
-                listaMenus.get(5).desplegar();
+                listaMenus.get(4).desplegar();
                 break;
             case 99:
-                listaMenus.get(6).desplegar();
+                listaMenus.get(5).desplegar();
                 break;
             case 0:
                 System.out.println("Gracias por atención.");

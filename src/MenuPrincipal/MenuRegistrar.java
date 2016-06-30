@@ -5,6 +5,7 @@
  */
 package MenuPrincipal;
 
+import MenuPrincipal.comando.Comando;
 import java.util.ArrayList;
 
 /**
@@ -16,33 +17,55 @@ public class MenuRegistrar implements Menu {
     ArrayList<InterfazUsuario> listaMenus;
 
     public MenuRegistrar() {
+        listaMenus = new ArrayList<>();
     }
 
     @Override
     public int desplegar() {
         int opcion;
         registrarMenus(null);
-        opcion = listaMenus.get(0).desplegar();
+        do {
+            mostrarOpciones();
+            opcion = listaMenus.get(0).desplegar();
+            procesarOpcion(opcion);
+        } while (opcion != 0);
         return opcion;
     }
 
+    @Override
     public void mostrarOpciones() {
-        System.out.println("Bienvenido a El Universal");
+        System.out.println("\t\tRegistrar cliente");
         System.out.println();
         System.out.println("Por favor seleccione la opción que desea ejecutar: ");
         System.out.println("\t1) Registrar cliente");
-        System.out.println("\t2) Comprar una bicicleta");
-        System.out.println("\t3) Alquilar una bicicleta");
-        System.out.println("\t4) Solicitar mantenimiento de su bicibleta");
-        System.out.println("\t5) Comprar partes o accesorios");
+        //System.out.println("\t2) Verificar registro de cliente");
         System.out.println();
-        System.out.println("\t99) Ver creditos");
-        System.out.println("\t0) Salir");
+        System.out.println("\t0) Volver");
         System.out.print("Opcion: ");
     }
 
     @Override
     public void registrarMenus(Menu elemento) {
         listaMenus.add(new ObtenerOpcion());
+    }
+
+    @Override
+    public void procesarOpcion(int opcion) {
+        Comando cmd;
+        switch (opcion) {
+            case 1:
+                System.out.println("Aún en espera.");
+                //cmd.ejecutar();
+                break;
+            case 2:
+                System.out.println("Aún en espera.");
+                break;
+            case 0:
+                System.out.println("Volviendo.");
+                break;
+            default:
+                System.out.println("La opción no es correcta.");
+                break;
+        }
     }
 }

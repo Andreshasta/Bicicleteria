@@ -5,49 +5,73 @@
  */
 package MenuPrincipal;
 
+import MenuPrincipal.comando.Comando;
+import MenuPrincipal.comando.SeleccionarBiciAlquilar;
 import java.util.ArrayList;
 
 /**
  *
  * @author Edwin
  */
-public class MenuAlquilar implements Menu{
+public class MenuAlquilar implements Menu {
+
     ArrayList<InterfazUsuario> listaMenus;
 
     public MenuAlquilar() {
         listaMenus = new ArrayList<>();
     }
-    
+
     private void registrarMenus() {
         listaMenus.add(new ObtenerOpcion());
     }
+
     @Override
-    public int desplegar(){
+    public int desplegar() {
         int opcion;
         registrarMenus();
-        mostrarOpciones();
-        opcion = listaMenus.get(0).desplegar();
+        do {
+            mostrarOpciones();
+            opcion = listaMenus.get(0).desplegar();
+            procesarOpcion(opcion);
+        } while (opcion != 0);
         return opcion;
     }
-    
+
+    @Override
     public void mostrarOpciones() {
-        System.out.println("Bienvenido a El Universal");
+        System.out.println("\t\tAlquilar bicicleta");
         System.out.println();
         System.out.println("Por favor seleccione la opción que desea ejecutar: ");
-        System.out.println("\t1) Registrar cliente");
-        System.out.println("\t2) Comprar una bicicleta");
-        System.out.println("\t3) Alquilar una bicicleta");
-        System.out.println("\t4) Solicitar mantenimiento de su bicibleta");
-        System.out.println("\t5) Comprar partes o accesorios");
+        System.out.println("\t1) Seleccionar bicicletas");
+        System.out.println("\t2) Pagar alquiler");
         System.out.println();
-        System.out.println("\t99) Ver creditos");
-        System.out.println("\t0) Salir");
+        System.out.println("\t0) Atras");
         System.out.print("Opcion: ");
     }
 
     @Override
     public void registrarMenus(Menu elemento) {
         listaMenus.add(new ObtenerOpcion());
+    }
+
+    @Override
+    public void procesarOpcion(int opcion) {
+        Comando cmd;
+        switch (opcion) {
+            case 1:
+                cmd = new SeleccionarBiciAlquilar();
+                cmd.ejecutar();
+                break;
+            case 2:
+                System.out.println("Aún en espera.");
+                break;
+            case 0:
+                System.out.println("Volviendo.");
+                break;
+            default:
+                System.out.println("La opción no es correcta.");
+                break;
+        }
     }
 
 }

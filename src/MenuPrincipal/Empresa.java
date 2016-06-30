@@ -19,6 +19,17 @@ public class Empresa {
     private Mantenimiento.TipoMantenimiento.ClientePasajero.ClienteGarantia clienteGarantia;
     private Mantenimiento.ComprarRepuesto.ConsultorRepuestos.ConsultorListaRepuestos clientePartes;
     private registrocliente.RegistrarCliente registroCliente;
+    private static Empresa instancia;
+    
+    private Empresa() {
+        this.nombre="El Universal";
+    }
+    public static Empresa getInstancia(){
+        if(instancia == null){
+            instancia = new Empresa();
+        }
+        return instancia;
+    }
     
     public void seleccionarBiciAlquilar(){
         clienteAlquilador = Alquilar.cliente.ClienteAlquilador.obtenerInstancia();

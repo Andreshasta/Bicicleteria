@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenuPrincipal;
+package MenuPrincipal.comando;
 
 /**
  *
  * @author Edwin
  */
-public interface Menu extends InterfazUsuario{
-    public void registrarMenus(Menu elemento);
-    public void mostrarOpciones();
-    public void procesarOpcion(int opcion);
+public interface Comando {
+    public void ejecutar();
 }

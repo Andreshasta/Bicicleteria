@@ -8,6 +8,8 @@ package clienteprueba;
 import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.base.ConsultorBaseRepuestos;
 import Mantenimiento.ComprarRepuesto.ConsultorRepuestos.ConsultorListaRepuestos;
 import Mantenimiento.ComprarRepuesto.ConsultorRepuestos.Repuesto;
+import MenuPrincipal.Menu;
+import MenuPrincipal.MenuPrincipal;
 import java.util.ArrayList;
 import java.util.Scanner;
 import registrocliente.ClienteIngreso;
@@ -60,10 +62,15 @@ public class ProbarRegistro {
         cliente.obtenerBicicleta();
         cliente.mostrarBicicleta();
     }
+    public static void probarIngresoPrincipal(){
+        Menu menup = new MenuPrincipal();
+        menup.desplegar();
+    }
     public static void main (String[] args){
         //pruebaRegistro();
         //pruebaListaRepuestos();
         //crearListaRepuestos(); //Crea la lista de respuestos y la guarda en un archivo.
-        probarAlquilar();
+        //probarAlquilar();
+        probarIngresoPrincipal();
     }
 }

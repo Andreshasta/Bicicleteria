@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidades;
-
-import java.io.Serializable;
+package Comprar.BicicletaArmada.producto.empaste;
 
 /**
  *
- * @author Andres Mauricio Hastamorir 20142020001
+ * @author AndresMauricio
  */
-public interface Bicicleta extends Serializable{
-    
+public class Plastica extends Empaste{
+
+    public Plastica() {
+        setTipoEmpaste("Plastica");
+    } 
 }

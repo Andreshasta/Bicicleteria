@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidades;
-
-import java.io.Serializable;
+package Comprar.BicicletaArmada.producto.paginado;
 
 /**
  *
- * @author Andres Mauricio Hastamorir 20142020001
+ * @author AndresMauricio
  */
-public interface TipoBicicleta extends Serializable{
+public class H50 extends Paginado{
+
+    public H50() {
+        setTipoPaginado("50 hojas");
+    }
     
 }
+
+

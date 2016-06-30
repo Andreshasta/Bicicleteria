@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entidades;
-
-import java.util.Calendar;
+package Comprar.BicicletaArmada.producto.paginado;
 
 /**
  *
- * @author Andres Mauricio Hastamorir 20142020001
+ * @author AndresMauricio
  */
-public interface Deuda {
+public class H100 extends Paginado{
+
+    public H100() {
+        setTipoPaginado("100 hojas");
+    }
     
 }

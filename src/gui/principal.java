@@ -28,9 +28,12 @@ public class principal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        fondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         archivoMenu = new javax.swing.JMenu();
         ingresarMenuItem = new javax.swing.JMenuItem();
+        cerrarSesionMenuItem1 = new javax.swing.JMenuItem();
         salirMenuItem = new javax.swing.JMenuItem();
         comprarMenu = new javax.swing.JMenu();
         cataloCompraMenuItem = new javax.swing.JMenuItem();
@@ -39,16 +42,36 @@ public class principal extends javax.swing.JFrame {
         cataloAlquilerMenuItem = new javax.swing.JMenuItem();
         copyMenuItem1 = new javax.swing.JMenuItem();
         mantenerMenu = new javax.swing.JMenu();
-        cutMenuItem2 = new javax.swing.JMenuItem();
-        copyMenuItem2 = new javax.swing.JMenuItem();
-        pasteMenuItem2 = new javax.swing.JMenuItem();
-        deleteMenuItem2 = new javax.swing.JMenuItem();
+        soliciMantenMenuItem2 = new javax.swing.JMenuItem();
+        compraRepuestoMenuItem2 = new javax.swing.JMenuItem();
         ayudaMenu = new javax.swing.JMenu();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        ayudaMenuItem = new javax.swing.JMenuItem();
+        acercaDeMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         desktopPane.setBackground(new java.awt.Color(255, 255, 255));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(fondo)
+                .addGap(49, 49, 49))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        desktopPane.add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 280);
 
         archivoMenu.setMnemonic('a');
         archivoMenu.setText("Archivo");
@@ -56,6 +79,10 @@ public class principal extends javax.swing.JFrame {
         ingresarMenuItem.setMnemonic('i');
         ingresarMenuItem.setText("Ingresar");
         archivoMenu.add(ingresarMenuItem);
+
+        cerrarSesionMenuItem1.setMnemonic('c');
+        cerrarSesionMenuItem1.setText("Cerrar Sesionr");
+        archivoMenu.add(cerrarSesionMenuItem1);
 
         salirMenuItem.setMnemonic('s');
         salirMenuItem.setText("Salir");
@@ -97,30 +124,33 @@ public class principal extends javax.swing.JFrame {
         mantenerMenu.setMnemonic('m');
         mantenerMenu.setText("Mantenimiento");
 
-        cutMenuItem2.setMnemonic('t');
-        cutMenuItem2.setText("Cut");
-        mantenerMenu.add(cutMenuItem2);
+        soliciMantenMenuItem2.setMnemonic('s');
+        soliciMantenMenuItem2.setText("Solicitar Mantenimiento");
+        soliciMantenMenuItem2.setToolTipText("");
+        mantenerMenu.add(soliciMantenMenuItem2);
 
-        copyMenuItem2.setMnemonic('y');
-        copyMenuItem2.setText("Copy");
-        mantenerMenu.add(copyMenuItem2);
-
-        pasteMenuItem2.setMnemonic('p');
-        pasteMenuItem2.setText("Paste");
-        mantenerMenu.add(pasteMenuItem2);
-
-        deleteMenuItem2.setMnemonic('d');
-        deleteMenuItem2.setText("Delete");
-        mantenerMenu.add(deleteMenuItem2);
+        compraRepuestoMenuItem2.setMnemonic('c');
+        compraRepuestoMenuItem2.setText("Comprar Repuesto");
+        compraRepuestoMenuItem2.setToolTipText("");
+        compraRepuestoMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compraRepuestoMenuItem2ActionPerformed(evt);
+            }
+        });
+        mantenerMenu.add(compraRepuestoMenuItem2);
 
         menuBar.add(mantenerMenu);
 
         ayudaMenu.setMnemonic('u');
         ayudaMenu.setText("Ayuda");
 
-        aboutMenuItem.setMnemonic('d');
-        aboutMenuItem.setText("Acerca de...");
-        ayudaMenu.add(aboutMenuItem);
+        ayudaMenuItem.setMnemonic('y');
+        ayudaMenuItem.setText("Ayuda");
+        ayudaMenu.add(ayudaMenuItem);
+
+        acercaDeMenuItem1.setMnemonic('d');
+        acercaDeMenuItem1.setText("Acerca de...");
+        ayudaMenu.add(acercaDeMenuItem1);
 
         menuBar.add(ayudaMenu);
 
@@ -143,6 +173,10 @@ public class principal extends javax.swing.JFrame {
     private void salirMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirMenuItemActionPerformed
+
+    private void compraRepuestoMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraRepuestoMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_compraRepuestoMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,24 +214,26 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem acercaDeMenuItem1;
     private javax.swing.JMenu alquilarMenu;
     private javax.swing.JMenu archivoMenu;
     private javax.swing.JMenu ayudaMenu;
+    private javax.swing.JMenuItem ayudaMenuItem;
     private javax.swing.JMenuItem cataloAlquilerMenuItem;
     private javax.swing.JMenuItem cataloCompraMenuItem;
+    private javax.swing.JMenuItem cerrarSesionMenuItem1;
+    private javax.swing.JMenuItem compraRepuestoMenuItem2;
     private javax.swing.JMenu comprarMenu;
     private javax.swing.JMenuItem copyMenuItem1;
-    private javax.swing.JMenuItem copyMenuItem2;
-    private javax.swing.JMenuItem cutMenuItem2;
-    private javax.swing.JMenuItem deleteMenuItem2;
     private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JLabel fondo;
     private javax.swing.JMenuItem ingresarMenuItem;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mantenerMenu;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem pasteMenuItem2;
     private javax.swing.JMenuItem persoBiciMenuItem;
     private javax.swing.JMenuItem salirMenuItem;
+    private javax.swing.JMenuItem soliciMantenMenuItem2;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package creadortiposbicicletas;
-
-import java.io.Serializable;
+package MenuPrincipal;
 
 /**
  *
- * @author Andres Mauricio Hastamorir 20142020001
+ * @author Edwin
  */
-public interface TipoBicicleta extends Serializable{
-    
+public class Inicio {
+    public static void main(String[] args){
+        MenuPrincipal menu=new MenuPrincipal();
+        menu.desplegar();
+    }
 }

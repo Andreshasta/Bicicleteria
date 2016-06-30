@@ -13,12 +13,9 @@ import Mantenimiento.TipoMantenimiento.Manejador.Taller;
  *
  * @author Andres
  */
-public class Cliente {
+public class ClienteGarantia {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void gestionarSolicitud(){
         Lectura entrada = new Lectura();
         ValorBicicleta valor = ValorBicicleta.getInstancia();
         valor.setValor(entrada.ingresarValor());

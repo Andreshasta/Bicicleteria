@@ -1,4 +1,4 @@
-package Mantenimiento.ComprarRepuesto.cliente;
+package Mantenimiento.ComprarRepuesto.ConsultorRepuestos;
 
 
 import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.ListaRepuestosCache;

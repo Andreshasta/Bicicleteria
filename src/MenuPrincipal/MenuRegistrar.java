@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package constructorbicicletas;
-
-import java.io.Serializable;
+package MenuPrincipal;
 
 /**
  *
- * @author Andres Mauricio Hastamorir 20142020001
+ * @author Edwin
  */
-public interface Bicicleta extends Serializable{
+public class MenuRegistrar extends MenuPrincipal{
     
 }

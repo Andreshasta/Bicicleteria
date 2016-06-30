@@ -6,7 +6,7 @@
 package Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos;
 
 import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.base.ConsultorBaseRepuestos;
-import Mantenimiento.ComprarRepuesto.cliente.Repuesto;
+import Mantenimiento.ComprarRepuesto.ConsultorRepuestos.Repuesto;
 import java.util.ArrayList;
 
 /**

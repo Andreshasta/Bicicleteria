@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package constructorbicicletas;
+package gui.manejadorEventos;
+
+import gui.Principal;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Edwin
  */
-public abstract class RinBici {
-
-    public abstract void girar();
+public interface Comando extends ActionListener{
+    public void ejecutar(Principal ventana);
 }

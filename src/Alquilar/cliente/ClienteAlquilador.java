@@ -9,20 +9,20 @@ import javax.swing.JOptionPane;
  *
  * @author AndresMauricio
  */
-public class Cliente {
+public class ClienteAlquilador {
 
-    private static Cliente clienteActivo;
+    private static ClienteAlquilador clienteActivo;
     private long idCliente;
     
     FabricaAbstracta fabrica;
     Bicicleta bicicleta;
     
-    private Cliente(){
+    private ClienteAlquilador(){
         idCliente=(new Date()).getTime();
     }
-    public static Cliente obtenerInstancia(){
+    public static ClienteAlquilador obtenerInstancia(){
         if (clienteActivo == null ){
-            clienteActivo = new Cliente();
+            clienteActivo = new ClienteAlquilador();
         }
         return clienteActivo;
     }

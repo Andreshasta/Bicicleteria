@@ -5,7 +5,7 @@
  */
 package Comprar.BicicletaArmada.inicio;
 
-import Comprar.BicicletaArmada.cliente.Cliente;
+import Comprar.BicicletaArmada.cliente.ClienteComprador;
 
 /**
  *
@@ -13,7 +13,7 @@ import Comprar.BicicletaArmada.cliente.Cliente;
  */
 public class inicio {
     public static void main(String[] args) {
-       Cliente tienda = new Cliente();
+       ClienteComprador tienda = new ClienteComprador();
        tienda.ingreso();
     }
 }

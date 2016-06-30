@@ -5,11 +5,9 @@
  */
 package clienteprueba;
 
-import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.ObtenerListaRepuestos;
-import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.ObtenerListaRepuestosProxy;
 import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.base.ConsultorBaseRepuestos;
-import Mantenimiento.ComprarRepuesto.cliente.ConsultorListaRepuestos;
-import Mantenimiento.ComprarRepuesto.cliente.Repuesto;
+import Mantenimiento.ComprarRepuesto.ConsultorRepuestos.ConsultorListaRepuestos;
+import Mantenimiento.ComprarRepuesto.ConsultorRepuestos.Repuesto;
 import java.util.ArrayList;
 import java.util.Scanner;
 import registrocliente.ClienteIngreso;
@@ -56,10 +54,16 @@ public class ProbarRegistro {
         ConsultorListaRepuestos consultor = new ConsultorListaRepuestos();
         consultor.obtenerListaRepuesto();
     }
-    
+    public static void probarAlquilar(){
+        Alquilar.cliente.ClienteAlquilador cliente = Alquilar.cliente.ClienteAlquilador.obtenerInstancia();
+        cliente.ingreso();
+        cliente.obtenerBicicleta();
+        cliente.mostrarBicicleta();
+    }
     public static void main (String[] args){
         //pruebaRegistro();
-        pruebaListaRepuestos();
-        //crearListaRepuestos();
+        //pruebaListaRepuestos();
+        //crearListaRepuestos(); //Crea la lista de respuestos y la guarda en un archivo.
+        probarAlquilar();
     }
 }

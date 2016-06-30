@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author AndresMauricio
  */
-public class Cliente {
+public class ClienteComprador {
 
     FabricaAbstracta fabrica;
     Bicicleta bici;

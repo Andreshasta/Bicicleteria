@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ClientePasajero;
+package Mantenimiento.TipoMantenimiento.ClientePasajero;
 
-import Entrada.Lectura;
-import Entrada.SalarioMinimo;
-import Manejador.TerminalTransporte;
+import Mantenimiento.TipoMantenimiento.Entrada.Lectura;
+import Mantenimiento.TipoMantenimiento.Entrada.ValorBicicleta;
+import Mantenimiento.TipoMantenimiento.Manejador.Taller;
 
 /**
  *
@@ -20,10 +20,10 @@ public class Cliente {
      */
     public static void main(String[] args) {
         Lectura entrada = new Lectura();
-        SalarioMinimo salario = SalarioMinimo.getInstancia();
-        salario.setValor(entrada.ingresarSueldo());
+        ValorBicicleta valor = ValorBicicleta.getInstancia();
+        valor.setValor(entrada.ingresarValor());
 
-        TerminalTransporte pasaje = new TerminalTransporte();
+        Taller pasaje = new Taller();
         pasaje.categoriaTiquet(entrada.ingresarEntrada());
         
         

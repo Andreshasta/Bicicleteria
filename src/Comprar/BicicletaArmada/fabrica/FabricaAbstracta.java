@@ -5,9 +5,9 @@
  */
 package Comprar.BicicletaArmada.fabrica;
 
-import Comprar.BicicletaArmada.producto.empaste.Empaste;
-import Comprar.BicicletaArmada.producto.encuadernado.Encuadernado;
-import Comprar.BicicletaArmada.producto.paginado.Paginado;
+import Comprar.BicicletaArmada.producto.marco.Marco;
+import Comprar.BicicletaArmada.producto.enllantado.Llanta;
+import Comprar.BicicletaArmada.producto.transmision.Transmision;
 
 /**
  *
@@ -15,46 +15,46 @@ import Comprar.BicicletaArmada.producto.paginado.Paginado;
  */
 public abstract class FabricaAbstracta {
 
-    private String marca;
-    private Empaste empastado;
-    private Paginado paginado;
-    private Encuadernado encuadernado;
+    private String tipo;
+    private Marco marco;
+    private Transmision cambio;
+    private Llanta llanta;
 
-    public abstract void crearEmpaste();
+    public abstract void crearMarco();
 
-    public abstract void crearEncuadernado();
+    public abstract void crearLlantas();
 
-    public abstract void crearPaginado();
+    public abstract void crearTransmision();
 
     public String getMarca() {
-        return marca;
+        return tipo;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public Empaste getEmpastado() {
-        return empastado;
+    public Marco getMarco() {
+        return marco;
     }
 
-    void setEmpastado(Empaste empastado) {
-        this.empastado = empastado;
+    void setMarco(Marco marco) {
+        this.marco = marco;
     }
 
-    public Paginado getPaginado() {
-        return paginado;
+    public Transmision getCambio() {
+        return cambio;
     }
 
-    void setPaginado(Paginado paginado) {
-        this.paginado = paginado;
+    void setCambio(Transmision cambio) {
+        this.cambio = cambio;
     }
 
-    public Encuadernado getEncuadernado() {
-        return encuadernado;
+    public Llanta getLLanta() {
+        return llanta;
     }
 
-    void setEncuadernado(Encuadernado encuadernado) {
-        this.encuadernado = encuadernado;
+    void setLlanta(Llanta llanta) {
+        this.llanta = llanta;
     }
 }

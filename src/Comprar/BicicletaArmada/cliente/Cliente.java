@@ -5,9 +5,9 @@
  */
 package Comprar.BicicletaArmada.cliente;
 
-import Comprar.BicicletaArmada.fabrica.FabCuadernoAndaluz;
-import Comprar.BicicletaArmada.fabrica.FabCuadernoNorma;
-import Comprar.BicicletaArmada.fabrica.FabCuadernoScribe;
+import Comprar.BicicletaArmada.fabrica.FabBiciCross;
+import Comprar.BicicletaArmada.fabrica.FabBiciPlayera;
+import Comprar.BicicletaArmada.fabrica.FabBiciSemicarrera;
 import Comprar.BicicletaArmada.fabrica.FabricaAbstracta;
 import javax.swing.JOptionPane;
 
@@ -18,13 +18,13 @@ import javax.swing.JOptionPane;
 public class Cliente {
 
     FabricaAbstracta fabrica;
-    Cuaderno cuaderno;
+    Bicicleta bici;
 
     public void ingreso() {
         int opcion = 0;
         String entrada;
         do {
-            entrada = JOptionPane.showInputDialog(null, "Seleccione la marca del cuaderno que desea: \n1. Norma \n2. Scribe \n3. Andaluz \n4. Salir");
+            entrada = JOptionPane.showInputDialog(null, "Seleccione la marca del cuaderno que desea: \n1. Playera \n2. Semicarrera \n3. Cross \n4. Salir");
             try {
                 if (entrada != null) {
                     opcion = Integer.parseInt(entrada);
@@ -42,17 +42,17 @@ public class Cliente {
     private void procesarEntrada(int entrada) {
         switch (entrada) {
             case 1:
-                fabrica = new FabCuadernoNorma();
+                fabrica = new FabBiciPlayera();
                 obtenerCuaderno();
                 mostrarCuaderno();
                 break;
             case 2:
-                fabrica = new FabCuadernoScribe();
+                fabrica = new FabBiciSemicarrera();
                 obtenerCuaderno();
                 mostrarCuaderno();
                 break;
             case 3:
-                fabrica = new FabCuadernoAndaluz();
+                fabrica = new FabBiciCross();
                 obtenerCuaderno();
                 mostrarCuaderno();
                 break;
@@ -64,17 +64,17 @@ public class Cliente {
     }
 
     public void obtenerCuaderno() {
-        cuaderno = new Cuaderno();
-        cuaderno.setMarca(fabrica.getMarca());
-        cuaderno.setEmpastado(fabrica.getEmpastado());
-        cuaderno.setEncuadernado(fabrica.getEncuadernado());
-        cuaderno.setPaginado(fabrica.getPaginado());
+        bici = new Bicicleta();
+        bici.setMarca(fabrica.getMarca());
+        bici.setEmpastado(fabrica.getMarco());
+        bici.setEncuadernado(fabrica.getLLanta());
+        bici.setPaginado(fabrica.getCambio());
     }
 
     public void mostrarCuaderno() {
-        JOptionPane.showMessageDialog(null, "Cuaderno \nmarca: " + cuaderno.getMarca() + "\nEmpaste: "
-                + cuaderno.getEmpastado().getTipoEmpaste() + "\nEncuadernado: "
-                + cuaderno.getEncuadernado().getTipoEncuadernado() + "\nPaginado: "
-                + cuaderno.getPaginado().getTipoPaginado());
+        JOptionPane.showMessageDialog(null, "Cuaderno \nmarca: " + bici.getMarca() + "\nEmpaste: "
+                + bici.getEmpastado().getTipoEmpaste() + "\nEncuadernado: "
+                + bici.getEncuadernado().getTipoEncuadernado() + "\nPaginado: "
+                + bici.getPaginado().getTipoPaginado());
     }
 }

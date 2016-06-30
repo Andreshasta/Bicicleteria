@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.manejadorEventos;
-
-import gui.Principal;
-import java.awt.event.ActionListener;
+package MenuPrincipal;
 
 /**
  *
  * @author Edwin
  */
-public interface Comando extends ActionListener{
-    public void ejecutar(Principal ventana);
+public interface InterfazUsuario {
+    public int desplegar();
 }

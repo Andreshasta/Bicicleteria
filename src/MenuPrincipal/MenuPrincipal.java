@@ -9,39 +9,35 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Edwin
+ * @author Andres
  */
-public class MenuPrincipal {
+public class MenuPrincipal implements Menu{
 
-    ArrayList<Menu> listaMenus;
+    ArrayList<InterfazUsuario> listaMenus;
 
     public MenuPrincipal() {
         listaMenus = new ArrayList<>();
     }
 
-    private void registrarMenus() {
+    @Override
+    public void registrarMenus(Menu menu) {
+        listaMenus.add(new ObtenerOpcion());
         listaMenus.add(new MenuRegistrar());
         listaMenus.add(new MenuComprar());
         listaMenus.add(new MenuAlquilar());
         listaMenus.add(new MenuMantenimiento());
     }
 
-    public void desplegar() {
+    @Override
+    public int desplegar() {
         int opcion = -1;
-        registrarMenus();
+        registrarMenus(null);
         do {
             mostrarOpciones();
-            try {
-                opcion = Integer.parseInt(leerOpcion());
-            } catch (NumberFormatException nfe) {
-                System.out.println(nfe.getCause());
-                opcion = -1;
-                System.out.println("Por favor ingrese le número de la opción.");
-                //JOptionPane.showMessageDialog(null, "Por favor ingrese el número de opción");
-            }
+            opcion = listaMenus.get(0).desplegar();
             procesarOpcion(opcion);
         } while (opcion != 0);
-
+        return opcion;
     }
 
     public void mostrarOpciones() {
@@ -59,30 +55,25 @@ public class MenuPrincipal {
         System.out.print("Opcion: ");
     }
 
-    public String leerOpcion() {
-        manejoarchivos.entradasalida.Lee lector = new manejoarchivos.entradasalida.Lee();
-        return lector.leerValor(1);
-    }
-
     public void procesarOpcion(int opcion) {
         switch (opcion) {
             case 1:
-                listaMenus.get(0);
+                listaMenus.get(1).desplegar();
                 break;
             case 2:
-                listaMenus.get(1);
+                listaMenus.get(2).desplegar();
                 break;
             case 3:
-                listaMenus.get(2);
+                listaMenus.get(3).desplegar();
                 break;
             case 4:
-                listaMenus.get(3);
+                listaMenus.get(4).desplegar();
                 break;
             case 5:
-                listaMenus.get(4);
+                listaMenus.get(5).desplegar();
                 break;
             case 99:
-                listaMenus.get(5);
+                listaMenus.get(6).desplegar();
                 break;
             case 0:
                 System.out.println("Gracias por atención.");

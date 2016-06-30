@@ -9,6 +9,6 @@ package MenuPrincipal;
  *
  * @author Edwin
  */
-public interface Menu {
-    
+public interface Menu extends InterfazUsuario{
+    public void registrarMenus(Menu elemento);
 }

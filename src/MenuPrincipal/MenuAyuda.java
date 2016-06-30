@@ -5,10 +5,26 @@
  */
 package MenuPrincipal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Edwin
  */
-public class MenuAyuda extends MenuPrincipal{
-    
+public class MenuAyuda implements Menu {
+
+    ArrayList<InterfazUsuario> listaMenus;
+
+    public MenuAyuda() {
+    }
+
+    public String desplegar() {
+        registrarMenus(null);
+        return "fin";
+    }
+
+    @Override
+    public void registrarMenus(Menu elemento) {
+        listaMenus.add(new ObtenerOpcion());
+    }
 }

@@ -5,6 +5,12 @@
  */
 package clienteprueba;
 
+import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.ObtenerListaRepuestos;
+import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.ObtenerListaRepuestosProxy;
+import Mantenimiento.ComprarRepuesto.ObtenerListaRepuestos.base.ConsultorBaseRepuestos;
+import Mantenimiento.ComprarRepuesto.cliente.ConsultorListaRepuestos;
+import Mantenimiento.ComprarRepuesto.cliente.Repuesto;
+import java.util.ArrayList;
 import java.util.Scanner;
 import registrocliente.ClienteIngreso;
 import registrocliente.RegistrarCliente;
@@ -14,7 +20,7 @@ import registrocliente.RegistrarCliente;
  * @author Edwin
  */
 public class ProbarRegistro {
-    public static void main (String[] args){
+    public static void pruebaRegistro(){
         Scanner sc = new Scanner(System.in);
         ClienteIngreso cliente = new ClienteIngreso();
         System.out.println("Ingrese nombre");
@@ -28,5 +34,32 @@ public class ProbarRegistro {
         }else{
             System.out.println("NO encontro al cliente indicado");
         }
+    }
+    public static void crearListaRepuestos(){
+        ConsultorBaseRepuestos cbr = new ConsultorBaseRepuestos();
+        ArrayList<Repuesto> listaRepuestos = new ArrayList<>();
+        listaRepuestos.add( new Repuesto(1, "Canasta", 25) );
+        listaRepuestos.add( new Repuesto(2, "Parrilla", 20) );
+        listaRepuestos.add( new Repuesto(3, "Freno", 5) );
+        listaRepuestos.add( new Repuesto(4, "Pedal", 5) );
+        listaRepuestos.add( new Repuesto(5, "Cadenilla", 18) );
+        listaRepuestos.add( new Repuesto(6, "Goma manubrio", 13) );
+        listaRepuestos.add( new Repuesto(7, "Caña de sillin", 12) );
+        listaRepuestos.add( new Repuesto(8, "Suspensión delantera", 30) );
+        listaRepuestos.add( new Repuesto(9, "Suspensión trasera", 24) );
+        listaRepuestos.add( new Repuesto(10, "Motor eléctrico", 170) );
+        for (int i = 0; i< listaRepuestos.size(); i++){
+            cbr.guardarArchivo(listaRepuestos.get(i));
+        }
+    }
+    public static void pruebaListaRepuestos(){
+        ConsultorListaRepuestos consultor = new ConsultorListaRepuestos();
+        consultor.obtenerListaRepuesto();
+    }
+    
+    public static void main (String[] args){
+        //pruebaRegistro();
+        pruebaListaRepuestos();
+        //crearListaRepuestos();
     }
 }
